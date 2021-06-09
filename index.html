@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using CSS Grid</title>
+        <style>
+            body {
+                color: black;
+                font-family: "Arial";
+                text-align: center;
+                border: 0px;
+                padding: 2px;
+                margin: 0px;
+                overflow: hidden;
+                background-color: lightgray;
+            }
+            #content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                /*grid-auto-rows: minmax(60px, auto);*/
+                grid-template-rows: 6vh 38vh 6vh 38vh 12vh;
+                grid-gap: 2px;
+                max-width: 960px;
+                margin: 0 auto;
+                grid-template-areas:
+                    "header header header"
+                    "main main main"
+                    "aside aside aside"
+                    "nav nav nav"
+                    "footer footer footer";
+                background-color: lightgray;
+                /* height: 100vh; */
+            }
+            /* desktop grid */
+            @media screen and (min-width: 840px) {
+                #content {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    /*grid-auto-rows: minmax(60px, auto);*/
+                    grid-template-rows: 6vh 6vh 76vh 12vh;
+                    grid-gap: 2px;
+                    max-width: 960px;
+                    margin: 0 auto;
+                    grid-template-areas:
+                        "header header header"
+                        "aside main main"
+                        "nav main main"
+                        "footer footer footer";
+                    background-color: lightgray;
+                    border-color: lightgray;
+                    /* height: 100vh; */
+                }
+            }
+            #content > * {
+                background: #fff;
+                padding: 8px;
+            }
+            header {
+                grid-area: header;
+                background: rgb(175, 149, 175) !important;
+                line-height: 3vh;
+            }
+            main {
+                grid-area: main;
+            }
+            aside {
+                grid-area: aside;
+                background-color: rgb(175, 149, 175) !important;
+                line-height: 3vh;
+            }
+            nav {
+                grid-area: nav;
+                overflow-x: hidden;
+                overflow-y: auto;
+                border-color: lightgray;
+            }
+            footer {
+                grid-area: footer;
+                background: rgb(175, 149, 175) !important;
+                line-height: 4vh;
+            }
+            .div-chats {
+                background-color: rgb(175, 149, 175);
+                padding: 0px;
+                /*vertical-align: middle;*/
+            }
+            .scroll {
+                overflow-x: hidden;
+                overflow-y: auto;
+                color: grey !important;
+                font-size: smaller;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <header>Header</header>
+            <main>Detail</main>
+            <aside>
+                <div class="div-chats">
+                    <form action="#">
+                        <label for="chat">Chats:</label>
+                        <select name="chat" id="chat">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </form>
+                </div>
+            </aside>
+            <nav>
+                <div class="scroll">
+                    <p>
+                        It is a good platform to learn programming. It is an
+                        educational website. Prepare for the Recruitment drive
+                        of product based companies like Microsoft, Amazon, Adobe
+                        etc with a free online placement preparation course. The
+                        course focuses on various MCQ's & Coding question likely
+                        to be asked in the interviews & make your upcoming
+                        placement season efficient and successful. Also, any
+                        geeks can help other geeks by writing articles on the
+                        GeeksforGeeks, publishing articles follow few steps that
+                        are Articles that need little modification/improvement
+                        from reviewers are published first. To quickly get your
+                        articles reviewed, please refer existing articles, their
+                        formatting style, coding style, and try to make you are
+                        close to them. In case you are a beginner, you may refer
+                        Guidelines to write an Article It is a good platform to
+                        learn programming. It is an educational website. Prepare
+                        for the Recruitment drive of product based companies
+                        like Microsoft, Amazon, Adobe etc with a free online
+                        placement preparation course. The course focuses on
+                        various MCQ's & Coding question likely to be asked in
+                        the interviews & make your upcoming placement season
+                        efficient and successful. Also, any geeks can help other
+                        geeks by writing articles on the GeeksforGeeks,
+                        publishing articles follow few steps that are Articles
+                        that need little modification/improvement from reviewers
+                        are published first. To quickly get your articles
+                        reviewed, please refer existing articles, their
+                        formatting style, coding style, and try to make you are
+                        close to them. In case you are a beginner, you may refer
+                        Guidelines to write an Article
+                    </p>
+                </div>
+            </nav>
+            <footer>
+                <div>
+                    <form action="#">
+                        <label for="command">Command:</label>
+
+                        <select name="command" id="command">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br />
+                        <label for="parameter">Parameter:</label>
+                        <input type="text" id="parameter" name="parameter" />
+                    </form>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
